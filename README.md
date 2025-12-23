@@ -1,6 +1,9 @@
 # app_library
 
 
+## run api
+poetry run uvicorn src.main:app --reload --host 0.0.0.0 --port 8081
+
 ## migración inicial 
 alembic revision --autogenerate -m "initial migration" 
 
@@ -8,4 +11,4 @@ alembic revision --autogenerate -m "initial migration"
 alembic upgrade head
 
 ## bajar una versión en la migración
-run alembic downgrade -1
+alembic downgrade -1
