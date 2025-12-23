@@ -1,1 +1,3 @@
-from .tag import Tag
+from sqlmodel import SQLModel
+
+from .tag import *
