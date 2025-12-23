@@ -1,6 +1,5 @@
-from sqlalchemy import Column, BigInteger, String
-from src.db.base_class import Base
+from sqlmodel import Field
+from src.models.base import Base
 
-class Tag(Base):
-  id = Column(BigInteger, primary_key=True, index=True)
-  name = Column(String, unique=True, index=True)
+class Tag(Base, table=True):
+  name: str = Field(unique=True, index=True)
