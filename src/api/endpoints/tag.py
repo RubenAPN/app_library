@@ -1,10 +1,10 @@
-from fastapi import APIRouter, Depends, HTTPException
-from sqlalchemy.orm import Session
 from typing import List
-from src.crud import tag as crud
-from src.schemas import tag as schemas
-from src.db.transactional import DBSessionDep
 
+from fastapi import APIRouter
+
+from src.crud import tag as crud
+from src.db.transactional import DBSessionDep
+from src.schemas import tag as schemas
 
 router = APIRouter()
 

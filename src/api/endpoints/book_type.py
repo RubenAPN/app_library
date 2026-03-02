@@ -43,7 +43,7 @@ def create(payload: schemas.BookTypeBase, db: DBSessionDep):
             status_code=status.HTTP_400_BAD_REQUEST,
             detail=str(e)
         )
-    except Exception as e:
+    except Exception:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail="Unexpected server error"
@@ -58,7 +58,7 @@ def update_book_type(book_type_id: int, updated_book_type: schemas.BookTypeUpdat
         return crud.update_book_type(db, book_type_id, updated_book_type)
     except HTTPException as e:
         raise e
-    except Exception as e:
+    except Exception:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail="Unexpected server error"
@@ -74,7 +74,7 @@ def delete_book_type(book_type_id: int, db: DBSessionDep):
         return {"detail": "Book type deleted successfully"}
     except HTTPException as e:
         raise e
-    except Exception as e:
+    except Exception:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail="Unexpected server error"
