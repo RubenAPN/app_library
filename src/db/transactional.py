@@ -2,12 +2,11 @@ import logging
 from collections.abc import Generator
 from typing import Annotated
 
-from fastapi import Depends
-from fastapi import HTTPException
-from fastapi import status
+from fastapi import Depends, HTTPException, status
 from pydantic import ValidationError
 from sqlalchemy import create_engine
 from sqlmodel import Session
+
 from src.core.config import settings
 
 engine = create_engine(settings.DATABASE_URL, pool_pre_ping=True)

@@ -1,4 +1,7 @@
 from sqlmodel import SQLModel
 
-from .tag import *
-from .author import *
+from .author import Author
+from .book_type import Type
+from .tag import Tag
+
+__all__ = ["Author", "Type", "Tag"]

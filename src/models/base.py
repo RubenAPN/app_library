@@ -1,11 +1,10 @@
-from datetime import datetime
-from datetime import timezone
+from datetime import datetime, timezone
 
 from sqlalchemy.ext.declarative import declared_attr
-from sqlmodel import Field
-from sqlmodel import SQLModel
+from sqlmodel import Field, SQLModel
 
 from src.utils.regex import to_snake_case
+
 
 class Base(SQLModel, table=False):
     """

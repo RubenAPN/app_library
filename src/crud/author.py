@@ -1,7 +1,8 @@
+from fastapi import HTTPException
 from sqlalchemy.orm import Session
+
 from src.models import author as models
 from src.schemas import author as schemas
-from fastapi import HTTPException
 
 
 def get_all_author(db: Session):

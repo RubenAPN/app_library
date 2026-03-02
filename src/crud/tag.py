@@ -1,7 +1,7 @@
-from sqlalchemy.orm import Session
-from src.models import tag as models
-from src.schemas import tag as schemas
 from fastapi import HTTPException
+from sqlalchemy.orm import Session
+
+from src.models import tag as models
 
 
 def get_all_tags(db: Session):
